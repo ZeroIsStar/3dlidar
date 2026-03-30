@@ -32,6 +32,10 @@ _PC_FIELDS = [
     pc2.PointField(name='intensity', offset=12, datatype=pc2.PointField.FLOAT32, count=1),
 ]
 
+os.environ['OMP_NUM_THREADS'] = '2'
+os.environ['MKL_NUM_THREADS'] = '2'
+os.environ['OPENBLAS_NUM_THREADS'] = '2'
+os.environ['NUMEXPR_NUM_THREADS'] = '2'
 
 class PersonDetectionNode(Node):
     """行人检测节点 - 10Hz版本，简化参数"""
